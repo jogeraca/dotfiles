@@ -46,7 +46,7 @@ cask "vlc"
 # cask "webex"
 # cask "webex-meetings"
 cask "whatsapp"
-cask "wireshark" --with-qt
+cask "wireshark --with-qt"
 cask "zoom"
 
 # Quick Look Plugins (https://github.com/sindresorhus/quick-look-plugins)
