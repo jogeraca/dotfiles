@@ -31,6 +31,17 @@ sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo Hos
 # Set the timezone (see `sudo systemsetup -listtimezones` for other values)
 sudo systemsetup -settimezone "America/Denver" > /dev/null
 
+# Format time in menubar
+# Big Sur details here: https://github.com/tech-otaku/menu-bar-clock
+defaults write com.apple.menuextra.clock.plist DateFormat -string "EEE MMM d  j:mm:ss a"
+# defaults write com.apple.menuextra.clock.plist FlashDateSeparators -bool false
+# defaults write com.apple.menuextra.clock.plist IsAnalog -bool false
+# defaults write com.apple.menuextra.clock.plist Show24Hour -bool false
+# defaults write com.apple.menuextra.clock.plist ShowAMPM -bool true
+# defaults write com.apple.menuextra.clock.plist ShowDayOfMonth -bool true
+# defaults write com.apple.menuextra.clock.plist ShowDayOfWeek -bool true
+# defaults write com.apple.menuextra.clock.plist ShowSeconds -bool true
+
 # Set standby delay to 24 hours (default is 1 hour)
 sudo pmset -a standbydelay 86400
 
@@ -43,8 +54,12 @@ sudo pmset -a standbydelay 86400
 # Disable the sound effects on boot
 # sudo nvram SystemAudioVolume=" "
 
-# Menu bar: show battery percentage
-defaults write com.apple.menuextra.battery ShowPercent YES
+# Control Center and menubar
+# Show battery
+# defaults write com.apple.controlcenter "NSStatusItem Visible Battery" -bool true
+# Show battery percentage
+# defaults write com.apple.menuextra.battery ShowPercent YES
+
 
 # Disable opening and closing window animations
 # defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
@@ -170,10 +185,11 @@ defaults write com.apple.finder QuitMenuItem -bool true
 # Finder: disable window animations and Get Info animations
 # defaults write com.apple.finder DisableAllAnimations -bool true
 
-# Set Desktop as the default location for new Finder windows
+# Set Home as the default location for new Finder windows
+# For desktop, use `PfDe` and `file://${HOME}/Desktop/``
 # For other paths, use `PfLo` and `file:///full/path/here/`
-# defaults write com.apple.finder NewWindowTarget -string "PfDe"
-# defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/Desktop/"
+defaults write com.apple.finder NewWindowTarget -string "PfLo"
+defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/"
 
 # Show icons for hard drives, servers, and removable media on the desktop
 defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
@@ -197,7 +213,7 @@ defaults write com.apple.finder ShowPathbar -bool true
 defaults write com.apple.finder QLEnableTextSelection -bool true
 
 # Display full POSIX path as Finder window title
-defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
+# defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
 
 # Keep folders on top when sorting by name
 defaults write com.apple.finder _FXSortFoldersFirst -bool true
@@ -283,7 +299,7 @@ defaults write com.apple.finder FXInfoPanesExpanded -dict \
 # defaults write com.apple.dock mineffect -string "scale"
 
 # Minimize windows into their application’s icon
-defaults write com.apple.dock minimize-to-application -bool true
+# defaults write com.apple.dock minimize-to-application -bool true
 
 # Enable spring loading for all Dock items
 defaults write com.apple.dock enable-spring-load-actions-on-all-items -bool true

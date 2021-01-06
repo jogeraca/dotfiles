@@ -25,7 +25,6 @@ dockutil --no-restart --add "/Applications/Adobe Lightroom Classic/Adobe Lightro
 dockutil --no-restart --add "/Applications/Adobe Illustrator 2021/Adobe Illustrator 2021.app"
 dockutil --no-restart --add "/Applications/Adobe Premiere Pro 2020/Adobe Premiere Pro 2020.app"
 dockutil --no-restart --add "/Applications/Adobe After Effects 2020/Adobe After Effects 2020.app"
-dockutil --no-restart --add "/Applications/Adobe After Effects 2020/Adobe After Effects 2020.app"
 dockutil --no-restart --add "/Applications/Capture One 20.app"
 dockutil --no-restart --add "/Applications/Sketch.app"
 dockutil --no-restart --add "/Applications/Figma.app"
@@ -33,6 +32,5 @@ dockutil --no-restart --add "/Applications/GitKraken.app"
 dockutil --no-restart --add "/Applications/Visual Studio Code.app"
 dockutil --no-restart --add "/Applications/Paw.app"
 dockutil --no-restart --add "/Applications/Hyper.app"
-
 
 killall Dock
