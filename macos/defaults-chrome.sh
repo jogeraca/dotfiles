@@ -1,5 +1,5 @@
 # Enroll in enterprise management
-defaults write com.google.Chrome CloudManagementEnrollmentToken -string dec6b70f-569a-4f3c-b85a-d3ca20810f42
+# defaults write com.google.Chrome CloudManagementEnrollmentToken -string dec6b70f-569a-4f3c-b85a-d3ca20810f42
 
 # Disable media key management
 defaults write com.google.Chrome KeyboardDefaultToFunctionKeys -bool false
